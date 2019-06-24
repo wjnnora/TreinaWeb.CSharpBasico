@@ -4,12 +4,16 @@ using System.Text;
 
 namespace Heranca
 {
-    public class Veiculo
+    public abstract class Veiculo
     {
         public string Nome { get; set; }
         public string Marca { get; set; }
         public double Potencia { get; set; }
         public double QuantidadeCombustivel { get; set; }
+
+        public abstract string Ligar();
+        public abstract string Desligar();
+        public abstract void Abastecer(double quantidade);
 
         public Veiculo()
         {
@@ -25,22 +29,7 @@ namespace Heranca
             this.Marca = marca;
             this.Potencia = potencia;
             this.QuantidadeCombustivel = quantidadeCombustivel;
-        }
-
-        public void Ligar()
-        {
-            Console.WriteLine("O veículo {0} da marca {1} está ligado.", this.Nome, this.Marca);
-        }
-
-        public void Desligar()
-        {
-            Console.WriteLine("O veículo {0} da marca {1} está desligado.", this.Nome, this.Marca);
-        }
-
-        public void Abastecer(double quantidadeCombustivel)
-        {
-            this.QuantidadeCombustivel = quantidadeCombustivel;
-        }
+        }       
 
         public override string ToString()
         {
