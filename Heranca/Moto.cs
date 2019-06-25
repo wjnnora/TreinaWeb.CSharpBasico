@@ -23,11 +23,14 @@ namespace Heranca
             return string.Format("A moto de nome {0}, marca {1} está desligado.", this.Nome, this.Marca);
         }
 
-        public override void Abastecer(double quantidade)
+        public override string Abastecer()
         {
-            this.QuantidadeCombustivel += quantidade;
+            return string.Format("A moto de nome {0}, marca {1} está abastecida.", this.Nome, this.Marca);
         }
-
+        public override string Desabastecer()
+        {
+            return string.Format("A moto de nome {0}, marca {1} está desabastecido.", this.Nome, this.Marca);
+        }
 
         public override string ToString()
         {
@@ -36,6 +39,6 @@ namespace Heranca
             sb.Append("\n");
             sb.Append("Quantidade de Rodas: " + this.QuantidadeRodas);
             return sb.ToString();
-        }
+        }            
     }
 }
